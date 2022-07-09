@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as api from './interfaces/api';
 
 @Component({
   selector: 'lib-ngx-util-tools',

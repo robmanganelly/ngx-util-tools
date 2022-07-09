@@ -2,23 +2,18 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
 
-## Code scaffolding
+## Features:
 
-Run `ng generate component component-name --project ngx-util-tools` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-util-tools`.
-> Note: Don't forget to add `--project ngx-util-tools` or else it will be added to the default project in your `angular.json` file. 
+### Pipes
 
-## Build
+* `fragment`: This pipe allows you to restrict a string in a field, to avoid text overflow. It takes a range value to indicate how many characters will be allowed in the result. If the range length is less than the actual value length, the pipe appends '...' to the fragment.
 
-Run `ng build ngx-util-tools` to build the project. The build artifacts will be stored in the `dist/` directory.
+  ```html
+  <span>{{username | fragment 5}}</span>  <!--usern...-->
+  <span>{{user | fragment 5}}</span>  <!--user-->
+  <span>{{user | fragment a}}</span>  <!--username  the wrong value 'a' is ignored-->
+  <span>{{user | fragment }}</span>  <!--username  the undefined value  is ignored-->
+  <span>{{user | fragment -5}}</span>  <!--Error. the pipe does not support negative numbers-->
 
-## Publishing
 
-After building your library with `ng build ngx-util-tools`, go to the dist folder `cd dist/ngx-util-tools` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ngx-util-tools` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  ``` 

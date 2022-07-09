@@ -10,3 +10,7 @@
 // import * as host from 'host';
 // const parsedUrl = host.parse('https://angular.io');
 // console.log(parsedUrl.hostname);
+
+import { APISerializedResponse as ApiResponse } from "./lib/interfaces/api";
+
+export type APISerializedResponse<T> = ApiResponse<T>
